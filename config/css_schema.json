@@ -1,27 +1,37 @@
 {
-  "name": "ArticleExtractor",
-  "baseSelector": ".cards[data-tax=news] .card__data",
+  "name": "GenericContentExtractor",
+  "baseSelector": "body",
   "fields": [
     {
-      "name": "title",
-      "selector": "h4.card__title",
-      "type": "text"
+      "name": "all_headings",
+      "selector": "h1, h2, h3, h4, h5, h6",
+      "type": "text",
+      "multiple": true
     },
     {
-      "name": "link",
-      "selector": "h4.card__title a", 
+      "name": "all_paragraphs",
+      "selector": "p",
+      "type": "text",
+      "multiple": true
+    },
+    {
+      "name": "all_text_content",
+      "selector": "div, span, section, article",
+      "type": "text",
+      "multiple": true
+    },
+    {
+      "name": "all_links",
+      "selector": "a[href]",
+      "type": "text",
+      "multiple": true
+    },
+    {
+      "name": "all_link_urls",
+      "selector": "a[href]",
       "type": "attribute",
-      "attribute": "href"
-    },
-    {
-      "name": "details",
-      "selector": ".card__details",
-      "type": "text"
-    },
-    {
-      "name": "topics",
-      "selector": ".card__topics.topics",
-      "type": "text"
+      "attribute": "href",
+      "multiple": true
     }
   ]
 }
